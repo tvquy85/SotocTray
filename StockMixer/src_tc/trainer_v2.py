@@ -28,7 +28,7 @@ def train_one_epoch(model, dataset, offsets, optimizer, scaler, cfg, device):
 
         if cfg.use_amp:
             with torch.cuda.amp.autocast():
-                out = model(data_batch)
+                out = model(data_batch, mask_batch)
                 prediction, alpha_t, lambda_t = out if isinstance(out, tuple) and len(out) == 3 else (out, None, None)
                 if not getattr(cfg, 'dynamic_netrank', True):
                     alpha_t = None
@@ -42,7 +42,7 @@ def train_one_epoch(model, dataset, offsets, optimizer, scaler, cfg, device):
             scaler.step(optimizer)
             scaler.update()
         else:
-            out = model(data_batch)
+            out = model(data_batch, mask_batch)
             prediction, alpha_t, lambda_t = out if isinstance(out, tuple) and len(out) == 3 else (out, None, None)
             if not getattr(cfg, 'dynamic_netrank', True):
                 alpha_t = None
@@ -69,7 +69,7 @@ def predict_over_offsets(model, dataset, offsets, cfg):
 
     for offset in offsets:
         data_batch, mask_batch, price_batch, gt_batch = dataset.get_batch(int(offset))
-        out = model(data_batch)
+        out = model(data_batch, mask_batch)
         prediction = out[0] if isinstance(out, tuple) else out
         return_ratio = (prediction - price_batch) / (price_batch + 1e-12)
         preds.append(return_ratio.squeeze(-1).detach().cpu().numpy())

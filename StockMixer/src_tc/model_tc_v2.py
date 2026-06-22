@@ -154,6 +154,39 @@ class NoGraphMixer(nn.Module):
         return x
 
 
+class GlobalContextNet(nn.Module):
+    def __init__(self, time_steps, channels, hidden_dim=32,
+                 alpha_min=0.1, alpha_max=2.0, lambda_min=0.0, lambda_max=2.0):
+        super().__init__()
+        self.alpha_min = alpha_min
+        self.alpha_max = alpha_max
+        self.lambda_min = lambda_min
+        self.lambda_max = lambda_max
+        self.norm = nn.LayerNorm([time_steps, channels])
+        self.net = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(time_steps * channels, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, 2),
+        )
+
+    def compute_market_state(self, inputs, mask=None):
+        # inputs: [num_assets, time_steps, channels]
+        # mask:   [num_assets, 1]
+        if mask is None:
+            return inputs.mean(dim=0, keepdim=True)
+        valid = (mask.squeeze(-1) > 0.5).float().view(-1, 1, 1)
+        denom = valid.sum().clamp_min(1.0)
+        return (inputs * valid).sum(dim=0, keepdim=True) / denom
+
+    def forward(self, inputs, mask=None):
+        market_state = self.compute_market_state(inputs, mask)
+        ctx = self.net(self.norm(market_state))
+        alpha_t = self.alpha_min + (self.alpha_max - self.alpha_min) * torch.sigmoid(ctx[:, 0:1])
+        lambda_t = self.lambda_min + (self.lambda_max - self.lambda_min) * torch.sigmoid(ctx[:, 1:2])
+        return alpha_t, lambda_t, market_state
+
+
 class StockMixerBackboneV2(nn.Module):
     def __init__(self, stocks, time_steps, channels, market, scale):
         super(StockMixerBackboneV2, self).__init__()
@@ -166,13 +199,9 @@ class StockMixerBackboneV2(nn.Module):
         self.time_fc_ = nn.Linear(time_steps * 2 + scale_dim, 1)
         
         # Dynamic NetRank context network V2
-        self.context_net = nn.Sequential(
-            nn.Linear(time_steps, 32),
-            nn.GELU(),
-            nn.Linear(32, 2)
-        )
+        self.context_net = GlobalContextNet(time_steps=time_steps, channels=channels)
 
-    def forward(self, inputs):
+    def forward(self, inputs, mask=None, return_context=False):
         x = inputs.permute(0, 2, 1)
         x = self.conv(x)
         x = x.permute(0, 2, 1)
@@ -184,10 +213,8 @@ class StockMixerBackboneV2(nn.Module):
         z = self.time_fc_(z)
         
         # Calculate dynamic multipliers for turnover and downside risk
-        market_state = inputs.mean(dim=2) # [batch, time_steps]
-        ctx_out = self.context_net(market_state) # [batch, 2]
-        
-        alpha_t = 0.1 + 1.9 * torch.sigmoid(ctx_out[:, 0:1]) # Range [0.1, 2.0]
-        lambda_t = 0.0 + 2.0 * torch.sigmoid(ctx_out[:, 1:2]) # Range [0.0, 2.0]
-        
-        return y + z, alpha_t, lambda_t
+        alpha_t, lambda_t, market_state = self.context_net(inputs, mask=mask)
+        score = y + z
+        if return_context:
+            return score, alpha_t, lambda_t, {"market_state": market_state.detach()}
+        return score, alpha_t, lambda_t
