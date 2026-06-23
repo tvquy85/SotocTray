@@ -41,7 +41,49 @@ def masked_softmax(scores, mask, tau=0.1):
     return w
 
 
-def netrank_loss_v2(return_ratio, gt, mask, prev_w, tau, cost_bps, rho_concentration, alpha_t=None, lambda_t=None):
+def resolve_penalty_coefficients(alpha_t, lambda_t, cfg, device):
+    """Return scalar alpha_eff and lambda_eff for ablation-safe loss.
+
+    Modes:
+      no_penalty: disable both regularizers.
+      static_*: use cfg.static_alpha / cfg.static_lambda.
+      dynamic_*: use model-produced alpha_t / lambda_t.
+      random_context: handled upstream by model output; here treated as dynamic_both.
+    """
+    mode = getattr(cfg, "ablation_mode", "dynamic_both")
+    static_alpha = torch.tensor(float(getattr(cfg, "static_alpha", 0.05)), device=device)
+    static_lambda = torch.tensor(float(getattr(cfg, "static_lambda", 0.05)), device=device)
+    zero = torch.tensor(0.0, device=device)
+
+    if alpha_t is None:
+        alpha_dyn = static_alpha
+    else:
+        alpha_dyn = alpha_t.mean()
+
+    if lambda_t is None:
+        lambda_dyn = static_lambda
+    else:
+        lambda_dyn = lambda_t.mean()
+
+    if mode == "no_penalty":
+        return zero, zero
+    if mode == "static_alpha_only":
+        return static_alpha, zero
+    if mode == "static_lambda_only":
+        return zero, static_lambda
+    if mode == "static_both":
+        return static_alpha, static_lambda
+    if mode == "dynamic_alpha_only":
+        return alpha_dyn, zero
+    if mode == "dynamic_lambda_only":
+        return zero, lambda_dyn
+    if mode in {"dynamic_both", "random_context"}:
+        return alpha_dyn, lambda_dyn
+
+    raise ValueError(f"Unknown ablation_mode={mode}")
+
+
+def netrank_loss_v2(return_ratio, gt, mask, prev_w, tau, cost_bps, rho_concentration, alpha_t=None, lambda_t=None, cfg=None):
     w = masked_softmax(return_ratio, mask, tau=tau)
     future_ret = gt.squeeze(-1)
 
@@ -57,15 +99,10 @@ def netrank_loss_v2(return_ratio, gt, mask, prev_w, tau, cost_bps, rho_concentra
     downside_return = torch.minimum(future_ret, torch.zeros_like(future_ret))
     downside_penalty = torch.sum(w * (downside_return ** 2))
     
-    dynamic_turnover = turnover
-    if alpha_t is not None:
-        alpha_t = alpha_t.squeeze()
-        dynamic_turnover = turnover * alpha_t.mean()
-        
-    dynamic_downside = downside_penalty
-    if lambda_t is not None:
-        lambda_t = lambda_t.squeeze()
-        dynamic_downside = downside_penalty * lambda_t.mean()
+    alpha_eff, lambda_eff = resolve_penalty_coefficients(alpha_t, lambda_t, cfg, return_ratio.device)
+
+    dynamic_turnover = turnover * alpha_eff
+    dynamic_downside = downside_penalty * lambda_eff
 
     net = gross - cost_rate * dynamic_turnover - dynamic_downside
         
@@ -78,6 +115,10 @@ def netrank_loss_v2(return_ratio, gt, mask, prev_w, tau, cost_bps, rho_concentra
         'soft_downside': downside_penalty.detach(),
         'soft_net': net.detach(),
         'soft_concentration': concentration.detach(),
+        'alpha_eff': alpha_eff.detach(),
+        'lambda_eff': lambda_eff.detach(),
+        'turnover_penalty': dynamic_turnover.detach(),
+        'downside_penalty_weighted': dynamic_downside.detach(),
     }
     return loss, w, stats
 
@@ -96,7 +137,8 @@ def compute_tc_loss_v2(prediction, gt, base_price, mask, prev_w, cfg, alpha_t=No
         cost_bps=cfg.train_cost_bps,
         rho_concentration=cfg.rho_concentration,
         alpha_t=alpha_t,
-        lambda_t=lambda_t
+        lambda_t=lambda_t,
+        cfg=cfg
     )
 
     total = cfg.beta_reg * reg + cfg.alpha_rank * rank + cfg.gamma_net * net_loss

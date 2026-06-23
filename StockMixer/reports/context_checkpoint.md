@@ -14,7 +14,7 @@ Khi tải lại (reload) project này vào phiên làm việc mới, hỡi AI, h
 - `src_tc/losses_v2.py`: Chứa hàm Loss V2 có tính đến `Downside Variance Penalty`.
 - `configs/crypto_tc_v2.yaml`: File cấu hình mới nhất dùng để huấn luyện V2 trên Crypto.
 
-## 3. Kết quả tốt nhất tính đến hiện tại (State-of-the-Art in this Repo)
+## 3. Kết quả tốt nhất tính đến hiện tại (favorable performance in the tested setting in this Repo)
 - **Mô hình:** `StockMixerBackboneV2` (Dynamic NetRank V2).
 - **Thị trường thử nghiệm:** Crypto (117 tokens, cực kỳ nhiễu).
 - **Kết quả trung bình (3 Seeds) Top-10:** Net Sharpe = 3.511, Turnover = 0.419, Max Drawdown = -15.09%.

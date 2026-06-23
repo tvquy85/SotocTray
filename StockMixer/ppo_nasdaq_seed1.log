@@ -1,0 +1,35 @@
+Starting PPO Training on NASDAQ (Seed 1)
+Epoch 001 | Reward: -0.1840 | Valid Net Sharpe: -1.8779 | Valid Turnover: 0.1754
+Epoch 002 | Reward: -0.1600 | Valid Net Sharpe: -1.2305 | Valid Turnover: 0.1325
+Epoch 003 | Reward: -0.1445 | Valid Net Sharpe: -1.7643 | Valid Turnover: 0.1516
+Epoch 004 | Reward: -0.1760 | Valid Net Sharpe: -0.7644 | Valid Turnover: 0.2373
+Epoch 005 | Reward: -0.1502 | Valid Net Sharpe: 1.4128 | Valid Turnover: 0.1516
+Epoch 006 | Reward: -0.1784 | Valid Net Sharpe: 1.6835 | Valid Turnover: 0.1421
+Epoch 007 | Reward: -0.1864 | Valid Net Sharpe: 1.5354 | Valid Turnover: 0.1198
+Epoch 008 | Reward: -0.1876 | Valid Net Sharpe: 1.9354 | Valid Turnover: 0.1246
+Epoch 009 | Reward: -0.1735 | Valid Net Sharpe: 2.0447 | Valid Turnover: 0.1198
+Epoch 010 | Reward: -0.1733 | Valid Net Sharpe: 2.0643 | Valid Turnover: 0.0976
+Epoch 011 | Reward: -0.1682 | Valid Net Sharpe: 2.4728 | Valid Turnover: 0.0913
+Epoch 012 | Reward: -0.1960 | Valid Net Sharpe: 2.3887 | Valid Turnover: 0.1008
+Epoch 013 | Reward: -0.1670 | Valid Net Sharpe: 2.1203 | Valid Turnover: 0.1103
+Epoch 014 | Reward: -0.1757 | Valid Net Sharpe: 2.0299 | Valid Turnover: 0.1325
+Epoch 015 | Reward: -0.1732 | Valid Net Sharpe: 1.4218 | Valid Turnover: 0.1738
+Epoch 016 | Reward: -0.1951 | Valid Net Sharpe: 1.6925 | Valid Turnover: 0.1817
+Epoch 017 | Reward: -0.1945 | Valid Net Sharpe: 1.9215 | Valid Turnover: 0.1595
+Epoch 018 | Reward: -0.1967 | Valid Net Sharpe: 2.0041 | Valid Turnover: 0.1627
+Epoch 019 | Reward: -0.1910 | Valid Net Sharpe: 1.6800 | Valid Turnover: 0.1516
+Epoch 020 | Reward: -0.1923 | Valid Net Sharpe: 0.8977 | Valid Turnover: 0.1881
+Epoch 021 | Reward: -0.2041 | Valid Net Sharpe: 0.6432 | Valid Turnover: 0.2262
+Epoch 022 | Reward: -0.1959 | Valid Net Sharpe: 0.7017 | Valid Turnover: 0.1849
+Epoch 023 | Reward: -0.1875 | Valid Net Sharpe: 0.7796 | Valid Turnover: 0.2135
+Epoch 024 | Reward: -0.2112 | Valid Net Sharpe: 0.3131 | Valid Turnover: 0.2183
+Epoch 025 | Reward: -0.2052 | Valid Net Sharpe: 0.5027 | Valid Turnover: 0.2151
+Epoch 026 | Reward: -0.2317 | Valid Net Sharpe: 0.5978 | Valid Turnover: 0.1976
+Early stopping triggered.
+D:\Conferences\PRICAI\StockTrader\StockMixer\src_tc\rl_baseline_train.py:273: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  agent.policy.load_state_dict(torch.load(os.path.join(cfg.output_dir, 'best_ppo.pt')))
+
+Final Test Results:
+Net Sharpe: -1.0568
+Turnover: 0.0549
+Max Drawdown: -0.3097

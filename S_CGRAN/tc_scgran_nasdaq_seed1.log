@@ -1,0 +1,275 @@
+Dataset: NASDAQ, Seed: 1, Device: cuda, TC Gamma: 1.0
+Starting Training TC-SCGRAN...
+epoch1##########################################################
+Train : loss:2.46e-02
+Valid : loss:1.76e-03
+Test  : loss:2.41e-03
+Valid: IC:0.0215, RIC:0.0242, Net Sharpe:1.0369, Turnover:0.7262, MDD:-0.1867
+Test : IC:0.0177, RIC:0.0336, Net Sharpe:0.6044, Turnover:0.5021, MDD:-0.1805
+epoch2##########################################################
+Train : loss:2.29e-03
+Valid : loss:1.20e-03
+Test  : loss:2.32e-03
+Valid: IC:0.0249, RIC:0.0271, Net Sharpe:1.3900, Turnover:0.7595, MDD:-0.2117
+Test : IC:0.0168, RIC:0.0331, Net Sharpe:-0.2193, Turnover:0.4970, MDD:-0.2752
+epoch3##########################################################
+Train : loss:1.68e-03
+Valid : loss:8.14e-04
+Test  : loss:1.30e-03
+Valid: IC:0.0207, RIC:0.0257, Net Sharpe:1.2414, Turnover:0.8960, MDD:-0.3195
+Test : IC:0.0159, RIC:0.0317, Net Sharpe:-0.7153, Turnover:0.6000, MDD:-0.3794
+epoch4##########################################################
+Train : loss:1.33e-03
+Valid : loss:5.89e-04
+Test  : loss:7.64e-04
+Valid: IC:0.0231, RIC:0.0270, Net Sharpe:1.5028, Turnover:0.9532, MDD:-0.2842
+Test : IC:0.0151, RIC:0.0302, Net Sharpe:-0.7118, Turnover:0.6253, MDD:-0.3747
+epoch5##########################################################
+Train : loss:1.01e-03
+Valid : loss:4.59e-04
+Test  : loss:4.77e-04
+Valid: IC:0.0244, RIC:0.0268, Net Sharpe:1.8219, Turnover:0.9929, MDD:-0.2401
+Test : IC:0.0147, RIC:0.0287, Net Sharpe:-0.4670, Turnover:0.6793, MDD:-0.3575
+epoch6##########################################################
+Train : loss:8.41e-04
+Valid : loss:3.66e-04
+Test  : loss:2.63e-04
+Valid: IC:0.0243, RIC:0.0263, Net Sharpe:1.5591, Turnover:1.0595, MDD:-0.2352
+Test : IC:0.0142, RIC:0.0275, Net Sharpe:-0.6788, Turnover:0.7451, MDD:-0.3765
+epoch7##########################################################
+Train : loss:7.49e-04
+Valid : loss:2.86e-04
+Test  : loss:1.53e-04
+Valid: IC:0.0249, RIC:0.0265, Net Sharpe:2.0875, Turnover:1.1071, MDD:-0.2361
+Test : IC:0.0143, RIC:0.0270, Net Sharpe:-0.6718, Turnover:0.8177, MDD:-0.4047
+epoch8##########################################################
+Train : loss:6.54e-04
+Valid : loss:2.26e-04
+Test  : loss:1.07e-04
+Valid: IC:0.0265, RIC:0.0276, Net Sharpe:1.7251, Turnover:1.1278, MDD:-0.2566
+Test : IC:0.0147, RIC:0.0269, Net Sharpe:0.0507, Turnover:0.8700, MDD:-0.3064
+epoch9##########################################################
+Train : loss:5.79e-04
+Valid : loss:1.98e-04
+Test  : loss:9.31e-05
+Valid: IC:0.0270, RIC:0.0280, Net Sharpe:2.0107, Turnover:1.1611, MDD:-0.1885
+Test : IC:0.0149, RIC:0.0266, Net Sharpe:-0.6172, Turnover:0.9089, MDD:-0.4181
+epoch10##########################################################
+Train : loss:5.23e-04
+Valid : loss:1.95e-04
+Test  : loss:1.08e-04
+Valid: IC:0.0272, RIC:0.0279, Net Sharpe:1.9255, Turnover:1.1659, MDD:-0.1903
+Test : IC:0.0148, RIC:0.0262, Net Sharpe:-0.1388, Turnover:0.9342, MDD:-0.3831
+epoch11##########################################################
+Train : loss:4.76e-04
+Valid : loss:2.19e-04
+Test  : loss:1.27e-04
+Valid: IC:0.0263, RIC:0.0273, Net Sharpe:1.7835, Turnover:1.1817, MDD:-0.2225
+Test : IC:0.0143, RIC:0.0256, Net Sharpe:0.0701, Turnover:1.0270, MDD:-0.4557
+epoch12##########################################################
+Train : loss:4.44e-04
+Valid : loss:2.36e-04
+Test  : loss:1.51e-04
+Valid: IC:0.0257, RIC:0.0269, Net Sharpe:2.0402, Turnover:1.1960, MDD:-0.1785
+Test : IC:0.0140, RIC:0.0254, Net Sharpe:0.2599, Turnover:1.0979, MDD:-0.4121
+epoch13##########################################################
+Train : loss:4.23e-04
+Valid : loss:2.38e-04
+Test  : loss:1.64e-04
+Valid: IC:0.0255, RIC:0.0269, Net Sharpe:1.5553, Turnover:1.1548, MDD:-0.2599
+Test : IC:0.0139, RIC:0.0256, Net Sharpe:0.4072, Turnover:1.1401, MDD:-0.4270
+epoch14##########################################################
+Train : loss:4.07e-04
+Valid : loss:2.28e-04
+Test  : loss:1.63e-04
+Valid: IC:0.0254, RIC:0.0270, Net Sharpe:1.5846, Turnover:1.1421, MDD:-0.2688
+Test : IC:0.0139, RIC:0.0260, Net Sharpe:0.4824, Turnover:1.1131, MDD:-0.4119
+epoch15##########################################################
+Train : loss:3.96e-04
+Valid : loss:2.15e-04
+Test  : loss:1.52e-04
+Valid: IC:0.0249, RIC:0.0268, Net Sharpe:1.5459, Turnover:1.1294, MDD:-0.2389
+Test : IC:0.0138, RIC:0.0265, Net Sharpe:0.4185, Turnover:1.1215, MDD:-0.4521
+epoch16##########################################################
+Train : loss:3.91e-04
+Valid : loss:2.04e-04
+Test  : loss:1.40e-04
+Valid: IC:0.0243, RIC:0.0265, Net Sharpe:1.3610, Turnover:1.1103, MDD:-0.2329
+Test : IC:0.0137, RIC:0.0268, Net Sharpe:0.3905, Turnover:1.1181, MDD:-0.4587
+epoch17##########################################################
+Train : loss:3.89e-04
+Valid : loss:1.93e-04
+Test  : loss:1.30e-04
+Valid: IC:0.0238, RIC:0.0261, Net Sharpe:1.5845, Turnover:1.0897, MDD:-0.2179
+Test : IC:0.0137, RIC:0.0271, Net Sharpe:0.6378, Turnover:1.0945, MDD:-0.4044
+epoch18##########################################################
+Train : loss:3.88e-04
+Valid : loss:1.77e-04
+Test  : loss:1.27e-04
+Valid: IC:0.0238, RIC:0.0257, Net Sharpe:1.0279, Turnover:1.0516, MDD:-0.2869
+Test : IC:0.0139, RIC:0.0273, Net Sharpe:0.5877, Turnover:1.0439, MDD:-0.3637
+epoch19##########################################################
+Train : loss:3.86e-04
+Valid : loss:1.65e-04
+Test  : loss:1.46e-04
+Valid: IC:0.0245, RIC:0.0255, Net Sharpe:0.9169, Turnover:1.0167, MDD:-0.2698
+Test : IC:0.0146, RIC:0.0275, Net Sharpe:0.1756, Turnover:0.9578, MDD:-0.4168
+epoch20##########################################################
+Train : loss:3.79e-04
+Valid : loss:1.71e-04
+Test  : loss:1.95e-04
+Valid: IC:0.0254, RIC:0.0257, Net Sharpe:0.9629, Turnover:0.9643, MDD:-0.3163
+Test : IC:0.0155, RIC:0.0283, Net Sharpe:0.7165, Turnover:0.8937, MDD:-0.3121
+epoch21##########################################################
+Train : loss:3.75e-04
+Valid : loss:1.97e-04
+Test  : loss:2.58e-04
+Valid: IC:0.0261, RIC:0.0259, Net Sharpe:1.1412, Turnover:0.9611, MDD:-0.3292
+Test : IC:0.0164, RIC:0.0291, Net Sharpe:0.4600, Turnover:0.8245, MDD:-0.3362
+epoch22##########################################################
+Train : loss:3.62e-04
+Valid : loss:2.22e-04
+Test  : loss:3.08e-04
+Valid: IC:0.0262, RIC:0.0258, Net Sharpe:1.2741, Turnover:0.9310, MDD:-0.3270
+Test : IC:0.0168, RIC:0.0295, Net Sharpe:0.1971, Turnover:0.7603, MDD:-0.3238
+epoch23##########################################################
+Train : loss:3.53e-04
+Valid : loss:2.43e-04
+Test  : loss:3.66e-04
+Valid: IC:0.0266, RIC:0.0258, Net Sharpe:1.1541, Turnover:0.8992, MDD:-0.3324
+Test : IC:0.0167, RIC:0.0297, Net Sharpe:0.0588, Turnover:0.6759, MDD:-0.3550
+epoch24##########################################################
+Train : loss:3.44e-04
+Valid : loss:3.28e-04
+Test  : loss:4.57e-04
+Valid: IC:0.0273, RIC:0.0262, Net Sharpe:1.2901, Turnover:0.8770, MDD:-0.2842
+Test : IC:0.0179, RIC:0.0311, Net Sharpe:-0.1815, Turnover:0.6287, MDD:-0.3540
+epoch25##########################################################
+Train : loss:3.31e-04
+Valid : loss:2.99e-04
+Test  : loss:4.17e-04
+Valid: IC:0.0271, RIC:0.0260, Net Sharpe:1.2045, Turnover:0.8738, MDD:-0.3196
+Test : IC:0.0181, RIC:0.0313, Net Sharpe:-0.4046, Turnover:0.6304, MDD:-0.3865
+epoch26##########################################################
+Train : loss:3.20e-04
+Valid : loss:2.80e-04
+Test  : loss:3.82e-04
+Valid: IC:0.0272, RIC:0.0261, Net Sharpe:1.2559, Turnover:0.8738, MDD:-0.2950
+Test : IC:0.0182, RIC:0.0316, Net Sharpe:-0.2782, Turnover:0.6304, MDD:-0.3741
+epoch27##########################################################
+Train : loss:3.11e-04
+Valid : loss:2.90e-04
+Test  : loss:3.79e-04
+Valid: IC:0.0276, RIC:0.0265, Net Sharpe:1.2279, Turnover:0.8770, MDD:-0.3072
+Test : IC:0.0185, RIC:0.0322, Net Sharpe:-0.4349, Turnover:0.6101, MDD:-0.3926
+epoch28##########################################################
+Train : loss:3.03e-04
+Valid : loss:3.33e-04
+Test  : loss:4.07e-04
+Valid: IC:0.0281, RIC:0.0269, Net Sharpe:1.3625, Turnover:0.8659, MDD:-0.2850
+Test : IC:0.0188, RIC:0.0330, Net Sharpe:0.0515, Turnover:0.5966, MDD:-0.3484
+epoch29##########################################################
+Train : loss:2.94e-04
+Valid : loss:3.84e-04
+Test  : loss:4.45e-04
+Valid: IC:0.0286, RIC:0.0272, Net Sharpe:1.3350, Turnover:0.8484, MDD:-0.2763
+Test : IC:0.0190, RIC:0.0336, Net Sharpe:-0.0657, Turnover:0.5747, MDD:-0.3638
+epoch30##########################################################
+Train : loss:2.85e-04
+Valid : loss:4.49e-04
+Test  : loss:4.97e-04
+Valid: IC:0.0291, RIC:0.0275, Net Sharpe:1.3578, Turnover:0.8357, MDD:-0.2710
+Test : IC:0.0192, RIC:0.0341, Net Sharpe:-0.2924, Turnover:0.5561, MDD:-0.3655
+epoch31##########################################################
+Train : loss:2.76e-04
+Valid : loss:5.28e-04
+Test  : loss:5.58e-04
+Valid: IC:0.0296, RIC:0.0276, Net Sharpe:1.6475, Turnover:0.8325, MDD:-0.2501
+Test : IC:0.0196, RIC:0.0346, Net Sharpe:-0.2740, Turnover:0.5241, MDD:-0.3226
+epoch32##########################################################
+Train : loss:2.60e-04
+Valid : loss:6.46e-04
+Test  : loss:6.80e-04
+Valid: IC:0.0297, RIC:0.0275, Net Sharpe:1.5302, Turnover:0.8119, MDD:-0.2750
+Test : IC:0.0189, RIC:0.0349, Net Sharpe:-0.3869, Turnover:0.4970, MDD:-0.3098
+epoch33##########################################################
+Train : loss:2.49e-04
+Valid : loss:7.16e-04
+Test  : loss:7.17e-04
+Valid: IC:0.0301, RIC:0.0275, Net Sharpe:1.7441, Turnover:0.8087, MDD:-0.2662
+Test : IC:0.0197, RIC:0.0353, Net Sharpe:-0.2733, Turnover:0.5038, MDD:-0.3077
+epoch34##########################################################
+Train : loss:2.35e-04
+Valid : loss:8.61e-04
+Test  : loss:8.73e-04
+Valid: IC:0.0300, RIC:0.0270, Net Sharpe:1.5253, Turnover:0.7690, MDD:-0.2863
+Test : IC:0.0189, RIC:0.0352, Net Sharpe:-0.2409, Turnover:0.4768, MDD:-0.3120
+epoch35##########################################################
+Train : loss:2.28e-04
+Valid : loss:9.08e-04
+Test  : loss:8.83e-04
+Valid: IC:0.0303, RIC:0.0269, Net Sharpe:1.5043, Turnover:0.7659, MDD:-0.2874
+Test : IC:0.0198, RIC:0.0355, Net Sharpe:-0.1310, Turnover:0.4886, MDD:-0.3206
+epoch36##########################################################
+Train : loss:2.16e-04
+Valid : loss:1.00e-03
+Test  : loss:9.72e-04
+Valid: IC:0.0302, RIC:0.0266, Net Sharpe:1.5458, Turnover:0.7643, MDD:-0.2725
+Test : IC:0.0198, RIC:0.0354, Net Sharpe:-0.2113, Turnover:0.4734, MDD:-0.2931
+epoch37##########################################################
+Train : loss:2.12e-04
+Valid : loss:1.10e-03
+Test  : loss:1.04e-03
+Valid: IC:0.0302, RIC:0.0263, Net Sharpe:1.6423, Turnover:0.7421, MDD:-0.2687
+Test : IC:0.0197, RIC:0.0353, Net Sharpe:-0.2395, Turnover:0.4667, MDD:-0.2874
+epoch38##########################################################
+Train : loss:2.02e-04
+Valid : loss:1.16e-03
+Test  : loss:1.09e-03
+Valid: IC:0.0302, RIC:0.0262, Net Sharpe:1.5091, Turnover:0.7341, MDD:-0.2674
+Test : IC:0.0198, RIC:0.0352, Net Sharpe:-0.1783, Turnover:0.4633, MDD:-0.2793
+epoch39##########################################################
+Train : loss:1.86e-04
+Valid : loss:1.23e-03
+Test  : loss:1.15e-03
+Valid: IC:0.0302, RIC:0.0260, Net Sharpe:1.6136, Turnover:0.7214, MDD:-0.2672
+Test : IC:0.0196, RIC:0.0351, Net Sharpe:-0.0267, Turnover:0.4582, MDD:-0.2848
+epoch40##########################################################
+Train : loss:1.77e-04
+Valid : loss:1.26e-03
+Test  : loss:1.16e-03
+Valid: IC:0.0302, RIC:0.0260, Net Sharpe:1.5531, Turnover:0.7151, MDD:-0.2789
+Test : IC:0.0198, RIC:0.0351, Net Sharpe:-0.1154, Turnover:0.4565, MDD:-0.2848
+epoch41##########################################################
+Train : loss:1.66e-04
+Valid : loss:1.31e-03
+Test  : loss:1.20e-03
+Valid: IC:0.0303, RIC:0.0261, Net Sharpe:1.6081, Turnover:0.7056, MDD:-0.2573
+Test : IC:0.0198, RIC:0.0351, Net Sharpe:-0.3707, Turnover:0.4464, MDD:-0.3109
+epoch42##########################################################
+Train : loss:1.56e-04
+Valid : loss:1.34e-03
+Test  : loss:1.21e-03
+Valid: IC:0.0305, RIC:0.0262, Net Sharpe:1.6036, Turnover:0.7056, MDD:-0.2518
+Test : IC:0.0201, RIC:0.0353, Net Sharpe:-0.2475, Turnover:0.4447, MDD:-0.3045
+epoch43##########################################################
+Train : loss:1.45e-04
+Valid : loss:1.38e-03
+Test  : loss:1.23e-03
+Valid: IC:0.0306, RIC:0.0263, Net Sharpe:1.6141, Turnover:0.7024, MDD:-0.2523
+Test : IC:0.0202, RIC:0.0354, Net Sharpe:-0.3012, Turnover:0.4380, MDD:-0.3006
+epoch44##########################################################
+Train : loss:1.35e-04
+Valid : loss:1.42e-03
+Test  : loss:1.25e-03
+Valid: IC:0.0307, RIC:0.0263, Net Sharpe:1.6414, Turnover:0.7040, MDD:-0.2571
+Test : IC:0.0204, RIC:0.0355, Net Sharpe:-0.3998, Turnover:0.4312, MDD:-0.3083
+
+Early stopping triggered at epoch 44.
+
+================ FINAL BEST PERFORMANCE (Min Valid Loss) ================
+Best Epoch: 19
+Valid: IC:0.0245, RIC:0.0255, Net Sharpe:0.9169, Turnover:1.0167, MDD:-0.2698
+Test : IC:0.0146, RIC:0.0275, Net Sharpe:0.1756, Turnover:0.9578, MDD:-0.4168
+=========================================================================
+

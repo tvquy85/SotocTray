@@ -6,8 +6,8 @@ To rigorously evaluate the generalization and robustness of the **Unified Regime
 2. **NASDAQ (Volatile/Tech-Heavy Market):** Subject to rapid sector rotations and high intraday volatility.
 3. **Crypto (Extreme Noise/OOD Market):** A dataset of 117 cryptocurrency tokens spanning 1035 days. This dataset serves as an Out-Of-Distribution (OOD) robustness test due to its extreme non-stationarity, massive drawdowns, and high noise-to-signal ratio.
 
-**Baselines:** We compare our framework against traditional Deep Reinforcement Learning models (e.g., PPO with static penalties) and the original `TC-StockMixer` base architecture.
-**Metrics:** We evaluate performance using the Net Sharpe Ratio, Max Drawdown (MDD), and Turnover rate (to measure trading velocity and transaction cost friction). The transaction cost is strictly modeled at 15 basis points (bps) per trade.
+**Baselines:** We compare our framework against traditional Deep Reinforcement Learning models (e.g., PPO with static penalties) and the original `TC-StockMixer` base architecture. To identify whether gains come from market-conditioned regularization rather than additional parameters, we compare against no-penalty, static-penalty, single-dynamic-penalty, and random-context controls under the same dataset and transaction-cost assumptions.
+**Metrics:** We evaluate performance using the Net Sharpe Ratio, Max Drawdown (MDD), and Turnover rate (to measure trading velocity and transaction cost friction). The model is trained with 15 bps and evaluated with 15 bps. We use the evaluation cost as the primary reporting cost and provide sensitivity analysis over 0, 5, 10, 15, 25, and 50 bps. Unless otherwise stated, all reported results are mean ± standard deviation across seeds. We also report bootstrap confidence intervals for Sharpe ratios and paired bootstrap comparisons against the strongest baseline available under the same data split.
 
 ### 4.2. Ablation Study: The Evolution of Regime Awareness
 To demonstrate the necessity of co-adapting both transaction costs and downside risk, we dissect our methodology into progressive phases:
@@ -21,7 +21,7 @@ To suppress noise, we implemented an attention ensemble based on the 20-day Roll
 **Phase 3: Context-Conditioned Transaction Costs (Dynamic V1)**
 We introduced the first iteration of `ContextNet` to solely predict $\alpha_t$ (dynamic turnover penalty). On the volatile NASDAQ dataset, this meta-network successfully slashed the turnover by an additional 50% (from 0.86 to 0.43). Incredibly, this mechanism alone inverted the Net Sharpe ratio from a devastating -0.295 to a profitable +0.072, proving that restraining the model during high-noise regimes is as critical as stock picking.
 
-### 4.3. State-of-the-Art Robustness: The Crypto Benchmark (Phase 5 - V2)
+### 4.3. favorable performance in the tested setting Robustness: The Crypto Benchmark (Phase 5 - V2)
 The ultimate test of our unified framework (V2)—which co-adapts **both** $\alpha_t$ and $\lambda_t$—was conducted on the Crypto dataset. Given the extreme unpredictability of this market, "lucky seeds" can drastically skew results. Therefore, we report the **average performance across 3 independent random seeds** for a Top-10 portfolio.
 
 | Metric | Baseline TC-StockMixer | V1 (Dynamic $\alpha_t$ only) | **V2 (Unified $\alpha_t$ & $\lambda_t$)** |

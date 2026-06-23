@@ -1,0 +1,37 @@
+{
+  "score_topk": {
+    "gross_mean_daily": -0.006598547674689648,
+    "net_mean_daily": -0.006698547674689647,
+    "gross_sharpe": -1.9410800954243745,
+    "net_sharpe": -1.9672042359415975,
+    "net_sortino": -3.1966569442876454,
+    "net_ann_return": -0.8732086987223073,
+    "max_drawdown": -0.21559597097327188,
+    "calmar": -4.050208799247513,
+    "avg_turnover": 0.06666666666666667,
+    "median_turnover": 0.0,
+    "avg_holdings": 5.0,
+    "final_equity": 0.8014979982671646
+  },
+  "equal_weight_all": {
+    "ann_return": -0.7091877737818268,
+    "net_sharpe": -2.979558901876468,
+    "max_drawdown": -0.48354255673618873,
+    "avg_turnover": 0.0,
+    "n_days": 117
+  },
+  "random_topk_mean": {
+    "gross_mean_daily": -0.004063612030010888,
+    "net_mean_daily": -0.006886945363344224,
+    "gross_sharpe": -1.534810745436892,
+    "net_sharpe": -2.395419472635973,
+    "net_sortino": -3.3572908548202878,
+    "net_ann_return": -0.09842934441856802,
+    "max_drawdown": -0.29620432183813306,
+    "calmar": 1.4913111597288968,
+    "avg_turnover": 1.8822222222222225,
+    "median_turnover": 2.0,
+    "avg_holdings": 5.0,
+    "final_equity": 0.8140606254579484
+  }
+}

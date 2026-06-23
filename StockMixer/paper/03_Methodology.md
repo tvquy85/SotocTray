@@ -33,3 +33,7 @@ Where:
 - The second term is the **Context-Conditioned Turnover Penalty**.
 - The third term is the **Context-Conditioned Downside Variance Penalty**, heavily suppressing the allocation $w_{t,i}$ for assets that historically or predictably exhibit severe negative returns during the recognized market regime.
 - The final term represents the Herfindahl-Hirschman Index (HHI) concentration penalty to enforce diversification.
+
+### 3.5. Training-time adaptive regularization versus execution-time allocation
+
+The context variables $\alpha_t$ and $\lambda_t$ are used to modulate the differentiable training objective. In Top-K evaluation, the learned score is used for ranking and portfolio construction is deterministic equal-weight Top-K.

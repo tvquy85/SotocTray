@@ -13,7 +13,7 @@ from src_tc.trainer_v2 import train_one_epoch, evaluate_model
 from src_tc.utils import set_seed, configure_torch
 
 
-def save_all_results(cfg, history, valid_pred, valid_gt, valid_mask, valid_pm, valid_bt, test_pred, test_gt, test_mask, test_pm, test_bt):
+def save_all_results(cfg, history, valid_pred, valid_gt, valid_mask, valid_pm, valid_bt, test_pred, test_gt, test_mask, test_pm, test_bt, valid_diag, test_diag):
     import pandas as pd
     
     if history:
@@ -47,6 +47,14 @@ def save_all_results(cfg, history, valid_pred, valid_gt, valid_mask, valid_pm, v
         'test_equity': test_bt['top5']['equity'],
     })
     equity_df_test.to_csv(os.path.join(cfg.output_dir, 'test_equity_curve_top5.csv'), index=False)
+
+    pd.DataFrame(valid_diag).to_csv(os.path.join(cfg.output_dir, 'valid_diagnostics.csv'), index=False)
+    pd.DataFrame(test_diag).to_csv(os.path.join(cfg.output_dir, 'test_diagnostics.csv'), index=False)
+
+    np.savez(
+        os.path.join(cfg.output_dir, "test_backtest_returns_top5.npz"),
+        returns=test_bt["top5"]["daily_returns"],
+    )
 
     with open(os.path.join(cfg.output_dir, 'config_used.yaml'), 'w') as f:
         yaml.dump(vars(cfg), f)
@@ -97,13 +105,18 @@ def main():
 
     for epoch in range(1, cfg.epochs + 1):
         train_stats = train_one_epoch(model, dataset, train_offsets, optimizer, scaler, cfg, device)
-        _, _, _, valid_pred_metrics, valid_bt = evaluate_model(model, dataset, valid_offsets, cfg)
-        valid_score = valid_bt['top5']['net_sharpe']
+        _, _, _, valid_pred_metrics, valid_bt, _ = evaluate_model(model, dataset, valid_offsets, cfg)
+        selection_backtest = getattr(cfg, 'selection_backtest', 'softmax')
+        selection_metric = getattr(cfg, 'selection_metric', 'net_sharpe')
+        valid_score = valid_bt[selection_backtest][selection_metric]
 
         row = {
             'epoch': epoch,
             **{f'train_{k}': v for k, v in train_stats.items()},
             **{f'valid_{k}': v for k, v in valid_pred_metrics.items()},
+            'valid_softmax_net_sharpe': valid_bt['softmax']['net_sharpe'],
+            'valid_softmax_avg_turnover': valid_bt['softmax']['avg_turnover'],
+            'valid_softmax_mdd': valid_bt['softmax']['max_drawdown'],
             'valid_top5_net_sharpe': valid_bt['top5']['net_sharpe'],
             'valid_top5_avg_turnover': valid_bt['top5']['avg_turnover'],
             'valid_top5_mdd': valid_bt['top5']['max_drawdown'],
@@ -124,10 +137,10 @@ def main():
     if best_state is not None:
         model.load_state_dict({k: v.to(device) for k, v in best_state.items()})
 
-    valid_pred, valid_gt, valid_mask, valid_pm, valid_bt = evaluate_model(model, dataset, valid_offsets, cfg)
-    test_pred, test_gt, test_mask, test_pm, test_bt = evaluate_model(model, dataset, test_offsets, cfg)
+    valid_pred, valid_gt, valid_mask, valid_pm, valid_bt, valid_diag = evaluate_model(model, dataset, valid_offsets, cfg)
+    test_pred, test_gt, test_mask, test_pm, test_bt, test_diag = evaluate_model(model, dataset, test_offsets, cfg)
 
-    save_all_results(cfg, history, valid_pred, valid_gt, valid_mask, valid_pm, valid_bt, test_pred, test_gt, test_mask, test_pm, test_bt)
+    save_all_results(cfg, history, valid_pred, valid_gt, valid_mask, valid_pm, valid_bt, test_pred, test_gt, test_mask, test_pm, test_bt, valid_diag, test_diag)
 
 
 if __name__ == '__main__':

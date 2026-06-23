@@ -1,0 +1,47 @@
+Starting PPO Training on SP500 (Seed 3)
+Epoch 001 | Reward: -0.1211 | Valid Net Sharpe: -1.3295 | Valid Turnover: 0.5067
+Epoch 002 | Reward: -0.1043 | Valid Net Sharpe: 0.8503 | Valid Turnover: 0.6364
+Epoch 003 | Reward: -0.1045 | Valid Net Sharpe: 0.7019 | Valid Turnover: 0.5051
+Epoch 004 | Reward: -0.1397 | Valid Net Sharpe: 0.9511 | Valid Turnover: 0.4466
+Epoch 005 | Reward: -0.1619 | Valid Net Sharpe: 1.0339 | Valid Turnover: 0.4071
+Epoch 006 | Reward: -0.1123 | Valid Net Sharpe: 1.2768 | Valid Turnover: 0.3518
+Epoch 007 | Reward: -0.1307 | Valid Net Sharpe: 1.1354 | Valid Turnover: 0.3170
+Epoch 008 | Reward: -0.1124 | Valid Net Sharpe: 1.2161 | Valid Turnover: 0.2901
+Epoch 009 | Reward: -0.1230 | Valid Net Sharpe: 1.2642 | Valid Turnover: 0.2664
+Epoch 010 | Reward: -0.1057 | Valid Net Sharpe: 1.3585 | Valid Turnover: 0.2569
+Epoch 011 | Reward: -0.1507 | Valid Net Sharpe: 1.3961 | Valid Turnover: 0.2379
+Epoch 012 | Reward: -0.1648 | Valid Net Sharpe: 1.3490 | Valid Turnover: 0.2126
+Epoch 013 | Reward: -0.1714 | Valid Net Sharpe: 1.3209 | Valid Turnover: 0.1984
+Epoch 014 | Reward: -0.1630 | Valid Net Sharpe: 1.2717 | Valid Turnover: 0.1700
+Epoch 015 | Reward: -0.1531 | Valid Net Sharpe: 1.4566 | Valid Turnover: 0.1621
+Epoch 016 | Reward: -0.1618 | Valid Net Sharpe: 1.3798 | Valid Turnover: 0.1573
+Epoch 017 | Reward: -0.1339 | Valid Net Sharpe: 1.3771 | Valid Turnover: 0.1399
+Epoch 018 | Reward: -0.1952 | Valid Net Sharpe: 1.3022 | Valid Turnover: 0.1399
+Epoch 019 | Reward: -0.1710 | Valid Net Sharpe: 1.3658 | Valid Turnover: 0.1383
+Epoch 020 | Reward: -0.1631 | Valid Net Sharpe: 1.3171 | Valid Turnover: 0.1304
+Epoch 021 | Reward: -0.1724 | Valid Net Sharpe: 1.3996 | Valid Turnover: 0.1178
+Epoch 022 | Reward: -0.1587 | Valid Net Sharpe: 1.3790 | Valid Turnover: 0.1067
+Epoch 023 | Reward: -0.1648 | Valid Net Sharpe: 1.4732 | Valid Turnover: 0.1036
+Epoch 024 | Reward: -0.1441 | Valid Net Sharpe: 1.3800 | Valid Turnover: 0.1130
+Epoch 025 | Reward: -0.1658 | Valid Net Sharpe: 1.3088 | Valid Turnover: 0.1115
+Epoch 026 | Reward: -0.1831 | Valid Net Sharpe: 1.3215 | Valid Turnover: 0.1115
+Epoch 027 | Reward: -0.2033 | Valid Net Sharpe: 1.3339 | Valid Turnover: 0.1130
+Epoch 028 | Reward: -0.1720 | Valid Net Sharpe: 1.1030 | Valid Turnover: 0.1415
+Epoch 029 | Reward: -0.1830 | Valid Net Sharpe: 1.1566 | Valid Turnover: 0.1478
+Epoch 030 | Reward: -0.1994 | Valid Net Sharpe: 1.1832 | Valid Turnover: 0.1542
+Epoch 031 | Reward: -0.1668 | Valid Net Sharpe: 1.1963 | Valid Turnover: 0.1652
+Epoch 032 | Reward: -0.2135 | Valid Net Sharpe: 1.2717 | Valid Turnover: 0.1621
+Epoch 033 | Reward: -0.2237 | Valid Net Sharpe: 1.2671 | Valid Turnover: 0.1526
+Epoch 034 | Reward: -0.1931 | Valid Net Sharpe: 1.2636 | Valid Turnover: 0.1510
+Epoch 035 | Reward: -0.2541 | Valid Net Sharpe: 1.1862 | Valid Turnover: 0.1652
+Epoch 036 | Reward: -0.2061 | Valid Net Sharpe: 1.1088 | Valid Turnover: 0.1621
+Epoch 037 | Reward: -0.2274 | Valid Net Sharpe: 0.8302 | Valid Turnover: 0.1494
+Epoch 038 | Reward: -0.2256 | Valid Net Sharpe: 0.9004 | Valid Turnover: 0.1621
+Early stopping triggered.
+D:\Conferences\PRICAI\StockTrader\StockMixer\src_tc\rl_baseline_train.py:273: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  agent.policy.load_state_dict(torch.load(os.path.join(cfg.output_dir, 'best_ppo.pt')))
+
+Final Test Results:
+Net Sharpe: 1.2436
+Turnover: 0.0631
+Max Drawdown: -0.2627

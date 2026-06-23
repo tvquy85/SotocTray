@@ -201,7 +201,7 @@ class StockMixerBackboneV2(nn.Module):
         # Dynamic NetRank context network V2
         self.context_net = GlobalContextNet(time_steps=time_steps, channels=channels)
 
-    def forward(self, inputs, mask=None, return_context=False):
+    def forward(self, inputs, mask=None, return_context=False, ablation_mode=None, random_context_seed=None):
         x = inputs.permute(0, 2, 1)
         x = self.conv(x)
         x = x.permute(0, 2, 1)
@@ -214,6 +214,15 @@ class StockMixerBackboneV2(nn.Module):
         
         # Calculate dynamic multipliers for turnover and downside risk
         alpha_t, lambda_t, market_state = self.context_net(inputs, mask=mask)
+
+        if ablation_mode == "random_context":
+            # Deterministic random context control. Same shape, no information from market state.
+            gen = torch.Generator(device=inputs.device)
+            seed = 12345 if random_context_seed is None else int(random_context_seed)
+            gen.manual_seed(seed)
+            alpha_t = 0.01 + 0.19 * torch.rand(alpha_t.shape, device=inputs.device, generator=gen)
+            lambda_t = 0.01 + 0.19 * torch.rand(lambda_t.shape, device=inputs.device, generator=gen)
+
         score = y + z
         if return_context:
             return score, alpha_t, lambda_t, {"market_state": market_state.detach()}

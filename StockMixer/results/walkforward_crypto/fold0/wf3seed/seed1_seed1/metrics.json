@@ -1,0 +1,106 @@
+{
+    "valid_prediction_metrics": {
+        "mse": 9.427192502713336,
+        "IC": 0.02247019345291276,
+        "RIC": 0.021466559637709125,
+        "ICIR": 0.1671530181054787,
+        "RICIR": 0.19709405488321466,
+        "prec_10": 0.5337301587301587
+    },
+    "valid_backtest": {
+        "softmax": {
+            "gross_mean_daily": 0.1938200670629218,
+            "net_mean_daily": 0.19233167623905578,
+            "gross_sharpe": 3.955465100397635,
+            "net_sharpe": 3.925462020609312,
+            "net_sortino": 19.60389833990058,
+            "net_ann_return": 92598556.81783734,
+            "max_drawdown": -0.9424242625933005,
+            "calmar": 98255701.27294105,
+            "avg_turnover": 0.9922605492440267,
+            "median_turnover": 1.0988739762950828,
+            "avg_holdings": 53.38492063492063,
+            "final_equity": 92598557.81783734
+        },
+        "top5": {
+            "gross_mean_daily": 0.15451876011681479,
+            "net_mean_daily": 0.15326280773586234,
+            "gross_sharpe": 7.260743871073698,
+            "net_sharpe": 7.201795849681393,
+            "net_sortino": 40.392460644967336,
+            "net_ann_return": 1829676408405.392,
+            "max_drawdown": -0.3155769896482077,
+            "calmar": 5797876487887.291,
+            "avg_turnover": 0.8373015873015873,
+            "median_turnover": 0.8,
+            "avg_holdings": 5.0,
+            "final_equity": 1829676408406.392
+        },
+        "top10": {
+            "gross_mean_daily": 0.10974749435285598,
+            "net_mean_daily": 0.10866058959095122,
+            "gross_sharpe": 8.832097966657484,
+            "net_sharpe": 8.744416411503577,
+            "net_sortino": 34.03011036897947,
+            "net_ann_return": 6997698306.080024,
+            "max_drawdown": -0.23361391507908724,
+            "calmar": 29954115976.700623,
+            "avg_turnover": 0.7246031746031747,
+            "median_turnover": 0.6000000000000001,
+            "avg_holdings": 10.0,
+            "final_equity": 6997698307.080024
+        }
+    },
+    "test_prediction_metrics": {
+        "mse": 38.78807634164777,
+        "IC": 0.0041741287255050935,
+        "RIC": 0.005908132773453999,
+        "ICIR": 0.06015404021188147,
+        "RICIR": 0.05518454347751849,
+        "prec_10": 0.4755102040816327
+    },
+    "test_backtest": {
+        "softmax": {
+            "gross_mean_daily": 0.008421017119824138,
+            "net_mean_daily": 0.007199787418123398,
+            "gross_sharpe": 1.0032589388198243,
+            "net_sharpe": 0.8580231986273125,
+            "net_sortino": 1.6506803613667,
+            "net_ann_return": -0.14582894352900533,
+            "max_drawdown": -0.7582164580208707,
+            "calmar": -0.19233154594066976,
+            "avg_turnover": 0.8141531344671604,
+            "median_turnover": 0.4237209979904059,
+            "avg_holdings": 72.21088435374149,
+            "final_equity": 0.9121532921406998
+        },
+        "top5": {
+            "gross_mean_daily": 0.014082208786577108,
+            "net_mean_daily": 0.013006698582495474,
+            "gross_sharpe": 2.012838821764796,
+            "net_sharpe": 1.8594401873115387,
+            "net_sortino": 4.160857736945439,
+            "net_ann_return": 5.893081083488978,
+            "max_drawdown": -0.5193707237043348,
+            "calmar": 11.346579263163129,
+            "avg_turnover": 0.7170068027210885,
+            "median_turnover": 0.8,
+            "avg_holdings": 5.0,
+            "final_equity": 3.083716722058643
+        },
+        "top10": {
+            "gross_mean_daily": 0.009338682984822783,
+            "net_mean_daily": 0.00830194829094523,
+            "gross_sharpe": 1.894312906002315,
+            "net_sharpe": 1.6829255364860418,
+            "net_sortino": 2.6400014217100174,
+            "net_ann_return": 2.7806457360503294,
+            "max_drawdown": -0.5330073199653693,
+            "calmar": 5.216899715797107,
+            "avg_turnover": 0.691156462585034,
+            "median_turnover": 0.6,
+            "avg_holdings": 10.0,
+            "final_equity": 2.1722684301616533
+        }
+    }
+}

@@ -1,0 +1,394 @@
+{
+  "proposed": [
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.5179922474828011,
+        "ci_low": -1.0896558640329106,
+        "ci_high": 3.5361706355499467,
+        "n_boot": 2000
+      },
+      "mdd": -0.5300545133148504
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.8531047679147465,
+        "ci_low": -0.5253035882691972,
+        "ci_high": 3.9297250825804513,
+        "n_boot": 2000
+      },
+      "mdd": -0.5193707237043348
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.6171996398775633,
+        "ci_low": -1.9692950769442452,
+        "ci_high": 3.265226359369391,
+        "n_boot": 2000
+      },
+      "mdd": -0.556021245488056
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed3_seed3\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.9721004241039591,
+        "ci_low": -1.7230365465533164,
+        "ci_high": 3.0214542308641157,
+        "n_boot": 2000
+      },
+      "mdd": -0.5443555495606143
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed4_seed4\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.7922716671526482,
+        "ci_low": -0.7736210370316302,
+        "ci_high": 3.730920827272333,
+        "n_boot": 2000
+      },
+      "mdd": -0.5343012313368862
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed5_seed5\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.7161131313592293,
+        "ci_low": -1.7649086978570079,
+        "ci_high": 3.1609619845842407,
+        "n_boot": 2000
+      },
+      "mdd": -0.6037095812901452
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed6_seed6\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.9785047791521144,
+        "ci_low": 1.0215240309182645,
+        "ci_high": 4.700138426944368,
+        "n_boot": 2000
+      },
+      "mdd": -0.37776526625621065
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed7_seed7\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.9289220138321997,
+        "ci_low": -2.128707336345198,
+        "ci_high": 2.684972937899578,
+        "n_boot": 2000
+      },
+      "mdd": -0.5601435878005758
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed8_seed8\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.67334967959621,
+        "ci_low": -0.9225262705285984,
+        "ci_high": 3.9468879883940584,
+        "n_boot": 2000
+      },
+      "mdd": -0.5714229946608212
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf10seed\\seed9_seed9\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 3.52881495775954,
+        "ci_low": 1.7730360315013451,
+        "ci_high": 5.591351915534455,
+        "n_boot": 2000
+      },
+      "mdd": -0.49547719060444495
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf3seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.5179922474828011,
+        "ci_low": -1.0896558640329106,
+        "ci_high": 3.5361706355499467,
+        "n_boot": 2000
+      },
+      "mdd": -0.5300545133148504
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf3seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.8531047679147465,
+        "ci_low": -0.5253035882691972,
+        "ci_high": 3.9297250825804513,
+        "n_boot": 2000
+      },
+      "mdd": -0.5193707237043348
+    },
+    {
+      "run": "results/walkforward_crypto\\fold0\\wf3seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.6171996398775633,
+        "ci_low": -1.9692950769442452,
+        "ci_high": 3.265226359369391,
+        "n_boot": 2000
+      },
+      "mdd": -0.556021245488056
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 3.747316013952567,
+        "ci_low": 1.470595191642455,
+        "ci_high": 6.631802545575853,
+        "n_boot": 2000
+      },
+      "mdd": -0.2509924319757014
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.9126292138448955,
+        "ci_low": -1.4099699376292103,
+        "ci_high": 5.178742659751405,
+        "n_boot": 2000
+      },
+      "mdd": -0.31474941052896743
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.5495228325833,
+        "ci_low": -0.40440367148336986,
+        "ci_high": 4.841114883254403,
+        "n_boot": 2000
+      },
+      "mdd": -0.3395798834641657
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed3_seed3\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.7878976136266316,
+        "ci_low": -1.5506518963665168,
+        "ci_high": 5.119868954359311,
+        "n_boot": 2000
+      },
+      "mdd": -0.26641308438480393
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed4_seed4\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 3.5949927240862216,
+        "ci_low": 0.5653996061529971,
+        "ci_high": 6.6562873097629645,
+        "n_boot": 2000
+      },
+      "mdd": -0.3866463878798442
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed5_seed5\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.0125523061751465,
+        "ci_low": -1.2270340692898887,
+        "ci_high": 5.3612099442982615,
+        "n_boot": 2000
+      },
+      "mdd": -0.28841945138572533
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed6_seed6\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.8764043520111064,
+        "ci_low": -1.7204718194123545,
+        "ci_high": 4.040639007518293,
+        "n_boot": 2000
+      },
+      "mdd": -0.5455898371877875
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed7_seed7\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.498086016103588,
+        "ci_low": -0.7496477546317596,
+        "ci_high": 5.8974746487747955,
+        "n_boot": 2000
+      },
+      "mdd": -0.3353227516153712
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed8_seed8\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 5.240873356418585,
+        "ci_low": 2.4321210747498565,
+        "ci_high": 8.066272988368583,
+        "n_boot": 2000
+      },
+      "mdd": -0.20049123583715478
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf10seed\\seed9_seed9\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 4.078376687170001,
+        "ci_low": 2.1909790023608076,
+        "ci_high": 7.237302048087421,
+        "n_boot": 2000
+      },
+      "mdd": -0.3130919876722763
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf3seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 3.747316013952567,
+        "ci_low": 1.470595191642455,
+        "ci_high": 6.631802545575853,
+        "n_boot": 2000
+      },
+      "mdd": -0.2509924319757014
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf3seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.9126292138448955,
+        "ci_low": -1.4099699376292103,
+        "ci_high": 5.178742659751405,
+        "n_boot": 2000
+      },
+      "mdd": -0.31474941052896743
+    },
+    {
+      "run": "results/walkforward_crypto\\fold1\\wf3seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.5495228325833,
+        "ci_low": -0.40440367148336986,
+        "ci_high": 4.841114883254403,
+        "n_boot": 2000
+      },
+      "mdd": -0.3395798834641657
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -2.665723164978625,
+        "ci_low": -9.346730272274819,
+        "ci_high": 3.1571533767159066,
+        "n_boot": 2000
+      },
+      "mdd": -0.2155959709733104
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.04254993288401256,
+        "ci_low": -6.612581869391734,
+        "ci_high": 5.778803808793017,
+        "n_boot": 2000
+      },
+      "mdd": -0.18918587357716898
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -0.49230986929781156,
+        "ci_low": -8.101675534282542,
+        "ci_high": 4.877993567233494,
+        "n_boot": 2000
+      },
+      "mdd": -0.21559597097322303
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed3_seed3\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -1.0239015832569724,
+        "ci_low": -7.322047846062645,
+        "ci_high": 4.901924771200761,
+        "n_boot": 2000
+      },
+      "mdd": -0.2082477794149531
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed4_seed4\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -0.4601456831899057,
+        "ci_low": -7.054304756467166,
+        "ci_high": 5.529285812588187,
+        "n_boot": 2000
+      },
+      "mdd": -0.17992905806126613
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed5_seed5\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 1.0553891141075387,
+        "ci_low": -5.112238825545983,
+        "ci_high": 6.915683867863854,
+        "n_boot": 2000
+      },
+      "mdd": -0.13775833476574684
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed6_seed6\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.2464851334190845,
+        "ci_low": -5.880150883525097,
+        "ci_high": 6.444159874476923,
+        "n_boot": 2000
+      },
+      "mdd": -0.18185084450050848
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed7_seed7\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -1.930430820785487,
+        "ci_low": -9.030179828519051,
+        "ci_high": 3.7281202126930224,
+        "n_boot": 2000
+      },
+      "mdd": -0.21559597097327188
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed8_seed8\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.797605774945271,
+        "ci_low": -5.35173617010085,
+        "ci_high": 6.553846463506335,
+        "n_boot": 2000
+      },
+      "mdd": -0.19093846832904016
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf10seed\\seed9_seed9\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 2.049729170646885,
+        "ci_low": -4.218365120770467,
+        "ci_high": 8.264419880264793,
+        "n_boot": 2000
+      },
+      "mdd": -0.1363090948212552
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf3seed\\seed0_seed0\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -2.665723164978625,
+        "ci_low": -9.346730272274819,
+        "ci_high": 3.1571533767159066,
+        "n_boot": 2000
+      },
+      "mdd": -0.2155959709733104
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf3seed\\seed1_seed1\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": 0.04254993288401256,
+        "ci_low": -6.612581869391734,
+        "ci_high": 5.778803808793017,
+        "n_boot": 2000
+      },
+      "mdd": -0.18918587357716898
+    },
+    {
+      "run": "results/walkforward_crypto\\fold2\\wf3seed\\seed2_seed2\\test_backtest_returns_top5.npz",
+      "sharpe": {
+        "estimate": -0.49230986929781156,
+        "ci_low": -8.101675534282542,
+        "ci_high": 4.877993567233494,
+        "n_boot": 2000
+      },
+      "mdd": -0.21559597097322303
+    }
+  ]
+}

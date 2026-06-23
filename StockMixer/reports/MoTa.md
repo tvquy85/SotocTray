@@ -33,7 +33,7 @@ Chúng ta vẫn giữ nguyên kiến trúc mạng "Mixer" nhẹ, nhanh và hiệ
 
 ---
 
-## 4. Cách làm thí nghiệm từng bước (Happy Path Workflow)
+## 4. Cách làm thí nghiệm từng bước (trường hợp thuận lợi Workflow)
 
 Để chứng minh luận điểm, thí nghiệm được chạy qua các bước tiêu chuẩn như sau:
 
@@ -63,7 +63,7 @@ Chúng ta vẫn giữ nguyên kiến trúc mạng "Mixer" nhẹ, nhanh và hiệ
 
 ## 5. Hiện trạng thí nghiệm hiện tại
 
-- **Đã hoàn thành 100% tiến trình Happy Path.**
+- **Đã hoàn thành 100% tiến trình trường hợp thuận lợi.**
 - Hệ thống đã tự động chạy song song trót lọt trên 3 Seeds cho 2 tập dữ liệu lớn là **NASDAQ** và **SP500** (bỏ qua NYSE do thiếu dữ liệu data gốc).
 - Các script tự động gộp kết quả (`aggregate_results.py`) và tạo báo cáo đồ thị (`generate_report.py`) đã xuất file thành công.
 - **Thành quả**: Net Sharpe trên SP500 tăng từ mức cận biên `0.090` (của Baseline) lên `0.710`, với mức sụt giảm (Max Drawdown) được cải thiện an toàn hơn. Trên NASDAQ, từ chỗ bị lỗ nặng (`-0.398`), mô hình đã nén chi phí giao dịch cực kì hiệu quả để giữ được Net Sharpe dương.

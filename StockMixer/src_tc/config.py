@@ -35,6 +35,12 @@ class ExperimentConfig:
     speed_mode: bool = True
     early_stop_patience: int = 15
     dynamic_netrank: bool = True
+    selection_backtest: str = "softmax"
+    selection_metric: str = "net_sharpe"
+    ablation_mode: str = "dynamic_both"
+    static_alpha: float = 0.05
+    static_lambda: float = 0.05
+    random_context_seed: int = 12345
 
 
 def load_config(path: str) -> ExperimentConfig:

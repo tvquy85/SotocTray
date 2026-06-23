@@ -28,3 +28,9 @@ rank_sample_size: null
 speed_mode: true
 early_stop_patience: 15
 dynamic_netrank: true
+selection_backtest: softmax
+selection_metric: net_sharpe
+ablation_mode: dynamic_both
+static_alpha: 0.05
+static_lambda: 0.05
+random_context_seed: 12345

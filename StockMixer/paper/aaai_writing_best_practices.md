@@ -12,7 +12,7 @@ Dựa trên các hướng dẫn từ reviewer của NeurIPS/AAAI và các chuyê
 - **The "Teaser" Figure (Hình ảnh mồi nhử):** Các bài báo thành công thường có một hình minh họa (Figure 1) ngay trang 1 hoặc 2. Hình này phải tóm tắt trực quan cốt lõi ý tưởng của bạn (ví dụ: Hình ảnh `ContextNet` đang điều khiển hai phanh $\alpha_t$ và $\lambda_t$ dựa trên các đám mây Regime).
 - **Methodology (Phương pháp):** Cung cấp đủ chi tiết để một người có chuyên môn có thể code lại được (Reproducibility). Sử dụng Pseudocode chuẩn chỉ. Các phương trình phải được giải thích rõ từng biến số.
 - **Experiments (Thực nghiệm):**
-  - *Strong Baselines:* Không chỉ so sánh với các baseline yếu, phải so với SOTA hiện hành.
+  - *Strong Baselines:* Không chỉ so sánh với các baseline yếu, phải so với favorable performance in the tested setting hiện hành.
   - *Rigorous Evidence:* Dùng nhiều bộ dữ liệu (SP500, NASDAQ, Crypto là điểm cộng cực lớn cho bài của chúng ta vì tính đa dạng). Có kiểm định tính ổn định (Ablation studies, Multi-seed).
 
 ## 3. Lấy lòng Reviewer (Reviewer-Focused Strategies)
@@ -26,4 +26,4 @@ Dựa trên các hướng dẫn từ reviewer của NeurIPS/AAAI và các chuyê
 
 ## 5. Áp dụng ngay vào bài báo "Unified Regime-Aware Optimization"
 - **Nhấn mạnh vào "Sự chuyển dịch Regime":** Đây là Selling Point cực mạnh. Đừng chỉ khoe thuật toán RL, hãy bán câu chuyện "thị trường thay đổi liên tục, và AI của chúng tôi biết tự thích nghi".
-- **Figure 1 của bài này:** Hãy vẽ một biểu đồ đường (Line chart) so sánh giá trị Portfolio của model tĩnh vs model của bạn trên đoạn thị trường Crypto bị sập mạnh. Bên dưới biểu đồ, vẽ đồ thị $\lambda_t$ (Downside penalty) vọt lên ngay trước cú sập. Bức hình này sẽ thuyết phục reviewer ngay từ trang đầu tiên!
+- **Figure 1 của bài này:** Hãy vẽ một biểu đồ đường (Line chart) so sánh giá trị Portfolio của model tĩnh vs model của bạn trên đoạn thị trường Crypto bị sập mạnh. Bên dưới biểu đồ, vẽ đồ thị $\lambda_t$ (Downside penalty) vọt lên ngay trước cú sập. Bức hình này sẽ thuyết phục reviewer ngay từ trang cải tiến!
